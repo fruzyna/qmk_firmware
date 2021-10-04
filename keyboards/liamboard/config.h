@@ -36,7 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // wiring of each half
 #define MATRIX_ROW_PINS { B4, B5, C7, B6, B2 }
 #define MATRIX_COL_PINS { D7, E6, B7, B3, B1, F7 } // enable for right side
-// #define MATRIX_COL_PINS { F7, B1, B3, B7, E6, D7 } // enable for left side
+//#define MATRIX_COL_PINS { F7, B1, B3, B7, E6, D7 } // enable for left side
 
 #define DIODE_DIRECTION COL2ROW
 
