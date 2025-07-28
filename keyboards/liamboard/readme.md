@@ -1,43 +1,26 @@
 # Keyboard aka LiamBoard I guess
 
-This keyboard is very similar to the Let's Split and Levinson, the firmware is based on lets_split/rev2. This firmware is for an Elite-C, Arduino Pro Micro, or other ATmega32u4 based boards.
+This keyboard is very similar to the Let's Split and Levinson, the firmware is based on lets_split/rev2.
+This firmware is for an Elite-C, Arduino Pro Micro, or other ATmega32u4 based boards.
 
 Hardware files for the keyboard can be found [here](https://github.com/fruzyna/keyboard).
 
-## First Time Setup
+## Build and Install Firmware
 
-Download or clone the `qmk_firmware` repo and navigate to its top level directory. Then install the [QMK tool](https://beta.docs.qmk.fm/tutorial/newbs_getting_started) and install the dependencies using:
-
-```
-$ qmk setup
-```
-
-In order to set proper udev rules you may need to run the following:
+Download or clone the `qmk_firmware` repo and navigate to its top level directory.
+The easiest way to build and flash firmware is using Docker/Podman.
+A utility script is provided to do all the work for you, `util/docker_build.sh`.
 
 ```
-sudo cp /home/liam/workspace/qmk_firmware/util/udev/50-qmk.rules /etc/udev/rules.d/
+$ sudo util/docker_build.sh liamboard/rev1:liam:flash
 ```
 
-Once your build environment is setup, you'll be able to generate the .hex using:
+Then press the reset button (or bridge RST and GND) to enter DFU mode.
 
-```
-$ make liamboard:liam
-```
+## Primary vs Secondary Board
 
-You will see a lot of output and if everything worked correctly you will see the built hex file, `liamboard_liam.hex`.
-
-If you would like to use one of the alternative keymaps, or create your own, copy one of the existing [keymaps](keymaps/) and run make like so:
-
-```
-$ make liamboard:YOUR_KEYMAP_NAME
-```
-
-If everything worked correctly you will see a file, `liamboard_YOUR_KEYMAP_NAME.hex`.
-
-For more information on customizing keymaps, take a look at the primary documentation for [Customizing Your Keymap](/docs/faq_keymap.md) in the main README.md.
-
-Finally, to deploy the firmware to the Elite-Cs using DFU mode run:
-
-```
-$ make liamboard:liam:dfu
-```
+With this version of the firmware, the primary board detects if it is the left or right board.
+This is done by checking the level of the F4 pin.
+If it is high, (or often floating) the board is the right board.
+If it is low, the board is the left board.
+Both boards should be flashed with the exact same image.

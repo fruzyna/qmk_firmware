@@ -1,6 +1,7 @@
 {
   "maintainer": "Liam Fruzyna",
   "processor": "atmega32u4",
-  "bootloader": "caterina",
-  "community_layouts": ["ortho_5x12"]
+  "bootloader": "atmel-dfu",
+  "community_layouts": ["ortho_5x12"],
+  "split.enabled": true
 }
