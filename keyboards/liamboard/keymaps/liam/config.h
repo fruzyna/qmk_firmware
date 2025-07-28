@@ -21,6 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
- // place overrides here
-#define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND) \
-                            }
+// place overrides here
+#define SPLIT_HAND_PIN F4
+#define SPLIT_HAND_PIN_LOW_IS_LEFT
