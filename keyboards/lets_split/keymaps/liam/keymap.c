@@ -85,16 +85,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Tab  |   *  |   4  |   5  |   6  |   +  |      | Left | Down |Right |      | DEL  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      |      |
+ * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      | ENT  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | BSPC |   0  |      |      |   .  |      |      |      |      |      |      |
+ * | CALC | BSPC |   0  |   .  |      | ENT  |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] =  LAYOUT_ortho_4x12( \
   KC_NO  , KC_SLSH, KC_7   , KC_8   , KC_9   , KC_MINS, KC_NO  , KC_LEFT, KC_UP  , KC_RGHT, KC_NO  , KC_BSPC, \
   KC_TAB , KC_ASTR, KC_4   , KC_5   , KC_6   , KC_PLUS, KC_NO  , KC_LEFT, KC_DOWN, KC_RGHT, KC_NO  , KC_DEL , \
-  KC_NO  , KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , \
-  KC_NO  , KC_BSPC, KC_0   , KC_NO  , KC_NO  , KC_DOT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO    \
+  KC_NO  , KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_ENT , \
+  KC_CALC, KC_BSPC, KC_0   , KC_DOT , KC_NO  , KC_ENT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO    \
 ),
 
 /* Numpad
@@ -103,16 +103,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Tab  |   *  |   4  |   5  |   6  |   +  |      | Left | Down |Right |      | DEL  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      |      |
+ * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      | ENT  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | CALC | BSPC |   0  |      |      |   .  |      |      |      |      |      |      |
+ * | CALC | BSPC |   0  |QWERTY|   .  | ENT  |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_NUMPAD] =  LAYOUT_ortho_4x12( \
   KC_NO  , KC_SLSH, KC_7   , KC_8   , KC_9   , KC_MINS, KC_NO  , KC_LEFT, KC_UP  , KC_RGHT, KC_NO  , KC_BSPC, \
   KC_TAB , KC_ASTR, KC_4   , KC_5   , KC_6   , KC_PLUS, KC_NO  , KC_LEFT, KC_DOWN, KC_RGHT, KC_NO  , KC_DEL , \
-  KC_NO  , KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , \
-  KC_CALC, KC_BSPC, KC_0   , QWERTY,  KC_NO  , KC_DOT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO   \
+  KC_NO  , KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_ENT , \
+  KC_CALC, KC_BSPC, KC_0   , QWERTY,  KC_DOT , KC_ENT , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO    \
 )
 
 };

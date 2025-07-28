@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Tab  |      |   4  |   5  |   6  |   +  |      | Left | Down | Right|      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      |      |
+ * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      | ENT  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | CALC | BSPC |   0  |   .  |      | ENT  |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -104,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,   KC_NO,   KC_NO,   KC_SLSH, KC_ASTR, KC_MINS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_DEL, \
   KC_TAB,  KC_NO,   KC_7   , KC_8   , KC_9   , KC_PLUS, KC_NO,   KC_LEFT, KC_UP  , KC_RGHT, KC_NO,   KC_BSPC,\
   KC_TAB,  KC_NO,   KC_4   , KC_5   , KC_6   , KC_PLUS, KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO,  \
-  KC_NO,   KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  \
+  KC_NO,   KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT, \
   KC_CALC, KC_BSPC, KC_0   , KC_DOT , KC_NO,   KC_ENT , KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO   \
 ),
 
@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |   4  |   5  |   6  |   +  |      | Left | Down | Right|      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      |      |
+ * |      | BSPC |   1  |   2  |   3  | ENT  |      |      |      |      |      | ENT  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | CALC | BSPC |   0  |QWERTY|   .  | ENT  |      |      |      |      |      |QWERTY|
  * `-----------------------------------------------------------------------------------'
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,   KC_NO,   KC_NO,   KC_SLSH, KC_ASTR, KC_MINS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_DEL, \
   KC_NO,   KC_NO,   KC_7   , KC_8   , KC_9   , KC_PLUS, KC_NO,   KC_LEFT, KC_UP  , KC_RGHT, KC_NO,   KC_BSPC,\
   KC_NO,   KC_NO,   KC_4   , KC_5   , KC_6   , KC_PLUS, KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO,  \
-  KC_NO,   KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  \
+  KC_NO,   KC_BSPC, KC_1   , KC_2   , KC_3   , KC_ENT , KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT, \
   KC_CALC, KC_BSPC, KC_0   , QWERTY , KC_DOT , KC_ENT , KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   QWERTY  \
 )
 
