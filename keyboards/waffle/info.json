@@ -1,34 +1,6 @@
 {
-    "keyboard_name": "LiamBoard RevA",
-    "manufacturer": "Liam Fruzyna",
-    "usb": {
-        "vid": "0x5426",
-        "pid": "0x0001",
-        "device_version": "1.0.0"
-    },
-    "matrix_pins": {
-        "cols": ["F7", "B1", "B3", "B7", "E6", "D7"],
-        "rows": ["B4", "B5", "C7", "B6", "B2"]
-    },
-    "diode_direction": "COL2ROW",
-    "split": {
-        "enabled": true,
-        "serial": {
-            "pin": "D0"
-        }
-    },
-    "features": {
-        "bootmagic": false,
-        "mousekey": true,
-        "extrakey": true,
-        "command": true
-    },
-    "qmk": {
-        "locking": {
-            "enabled": true,
-            "resync": true
-        }
-    },
+    "maintainer": "Liam Fruzyna",
+    "community_layouts": ["ortho_5x12"],
     "layout_aliases": {
         "LAYOUT": "LAYOUT_ortho_5x12"
     },
@@ -106,5 +78,12 @@
                 {"matrix": [9, 5], "x": 12, "y": 4}
             ]
         }
+    },
+    "split.enabled": true,
+    "features": {
+        "bootmagic": false,
+        "mousekey": true,
+        "extrakey": true,
+        "command": true
     }
 }
