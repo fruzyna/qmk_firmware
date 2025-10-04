@@ -1,0 +1,28 @@
+{
+    "keyboard_name": "Waffle (ATmega32u4)",
+    "manufacturer": "Liam Fruzyna",
+    "processor": "atmega32u4",
+    "bootloader": "atmel-dfu",
+    "usb": {
+        "vid": "0x5426",
+        "pid": "0x0001",
+        "device_version": "1.0.0"
+    },
+    "matrix_pins": {
+        "cols": ["F7", "B1", "B3", "B7", "E6", "D7"],
+        "rows": ["B4", "B5", "C7", "B6", "B2"]
+    },
+    "diode_direction": "COL2ROW",
+    "split": {
+        "enabled": true,
+        "serial": {
+            "pin": "D0"
+        }
+    },
+    "qmk": {
+        "locking": {
+            "enabled": true,
+            "resync": true
+        }
+    }
+}

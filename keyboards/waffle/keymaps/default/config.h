@@ -22,5 +22,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 // place overrides here
-#define SPLIT_HAND_PIN F4
 #define SPLIT_HAND_PIN_LOW_IS_LEFT
+
+#ifdef KEYBOARD_waffle_atmega32u4
+    #define SPLIT_HAND_PIN F4
+#else
+    #define SPLIT_HAND_PIN GP29
+    #define SPLIT_WATCHDOG_ENABLE
+#endif
