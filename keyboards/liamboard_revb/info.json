@@ -1,0 +1,7 @@
+{
+  "maintainer": "Liam Fruzyna",
+  "processor": "RP2040",
+  "bootloader": "rp2040",
+  "community_layouts": ["ortho_5x12"],
+  "split.enabled": true
+}
