@@ -24,3 +24,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // place overrides here
 #define SPLIT_HAND_PIN GP29
 #define SPLIT_HAND_PIN_LOW_IS_LEFT
+#define SPLIT_USB_DETECT
