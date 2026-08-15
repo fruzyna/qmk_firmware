@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // place overrides here
 #define SPLIT_HAND_PIN_LOW_IS_LEFT
 
-#ifdef KEYBOARD_liamboard_rev1
+#ifdef KEYBOARD_waffle_rev1
     #define SPLIT_HAND_PIN F4
 #else
     #define SPLIT_HAND_PIN GP29

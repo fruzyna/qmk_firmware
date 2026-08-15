@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "LiamBoard RevA",
+    "keyboard_name": "Waffle RevA",
     "manufacturer": "Liam Fruzyna",
     "processor": "atmega32u4",
     "bootloader": "atmel-dfu",

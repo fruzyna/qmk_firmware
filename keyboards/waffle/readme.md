@@ -1,4 +1,4 @@
-# Keyboard aka LiamBoard I guess
+# Waffle
 
 This keyboard is very similar to the Let's Split and Levinson, the firmware is based on lets_split/rev2.
 This firmware is for an Elite-C, Arduino Pro Micro, or other ATmega32u4 based boards.
@@ -12,10 +12,8 @@ The easiest way to build and flash firmware is using Docker/Podman.
 A utility script is provided to do all the work for you, `util/docker_build.sh`.
 
 ```
-$ sudo util/docker_build.sh liamboard/rev[1/2]:liam
+$ util/docker_build.sh waffle/rev[1/2]:liam
 ```
-
-Then press the reset button (or bridge RST and GND) to enter DFU mode.
 
 ## Primary vs Secondary Board
 
@@ -27,6 +25,7 @@ Both boards should be flashed with the exact same image.
 
 ## Revisions
 
-The second revision of liamboard transitions from an ATmega32U4 to an RP2040 based microcontroller.
+The second revision of Waffle transitions from an ATmega32U4 to an RP2040 based microcontroller.
 Automatic flashing can be performed on rev1 boards by adding `:flash` to the above command.
-Rev2 boards can be flashed by drag-and-dropping the generated uf2 file (/.build/liamboard_rev2_liam.uf2) onto the board's filesystem when in boot mode.
+Then press the reset button (or bridge RST and GND) to enter DFU mode.
+Rev2 boards can be flashed by drag-and-dropping the generated uf2 file (/.build/waffle_rev2_liam.uf2) onto the board's filesystem when in boot mode.
