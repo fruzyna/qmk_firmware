@@ -12,7 +12,7 @@ The easiest way to build and flash firmware is using Docker/Podman.
 A utility script is provided to do all the work for you, `util/docker_build.sh`.
 
 ```
-$ sudo util/docker_build.sh liamboard/rev1:liam:flash
+$ sudo util/docker_build.sh liamboard/rev[1/2]:liam
 ```
 
 Then press the reset button (or bridge RST and GND) to enter DFU mode.
@@ -20,7 +20,13 @@ Then press the reset button (or bridge RST and GND) to enter DFU mode.
 ## Primary vs Secondary Board
 
 With this version of the firmware, the primary board detects if it is the left or right board.
-This is done by checking the level of the F4 pin.
+This is done by checking the level of the F4/GP29 pin.
 If it is high, (or often floating) the board is the right board.
 If it is low, the board is the left board.
 Both boards should be flashed with the exact same image.
+
+## Revisions
+
+The second revision of liamboard transitions from an ATmega32U4 to an RP2040 based microcontroller.
+Automatic flashing can be performed on rev1 boards by adding `:flash` to the above command.
+Rev2 boards can be flashed by drag-and-dropping the generated uf2 file (/.build/liamboard_rev2_liam.uf2) onto the board's filesystem when in boot mode.

@@ -1,22 +1,22 @@
 {
-    "keyboard_name": "LiamBoard RevA",
+    "keyboard_name": "LiamBoard RevB",
     "manufacturer": "Liam Fruzyna",
-    "processor": "atmega32u4",
-    "bootloader": "atmel-dfu",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "usb": {
         "vid": "0x5426",
-        "pid": "0x0001",
-        "device_version": "1.0.0"
+        "pid": "0x0002",
+        "device_version": "1.1.0"
     },
     "matrix_pins": {
-        "cols": ["F7", "B1", "B3", "B7", "E6", "D7"],
-        "rows": ["B4", "B5", "C7", "B6", "B2"]
+        "cols": ["GP26", "GP22", "GP20", "GP12", "GP7", "GP6"],
+        "rows": ["GP8", "GP9", "GP14", "GP21", "GP23"]
     },
     "diode_direction": "COL2ROW",
     "split": {
         "enabled": true,
         "serial": {
-            "pin": "D0"
+            "pin": "GP2"
         }
     },
     "qmk": {
