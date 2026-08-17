@@ -1,28 +1,36 @@
+/*
+ * Copyright 2025 Liam Fruzyna <liam@fruzyna.net>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #include QMK_KEYBOARD_H
 
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
 enum layer_names {
   _QWERTY,
   _LOWER,
   _RAISE,
-  _NUMPAD,
-  _ADJUST
+  _NUMPAD
 };
 
-enum custom_keycodes {
-  QWERTY = SAFE_RANGE,
-  NUMPAD
-};
-
+// momentary layers
 #define LOWER   MO(_LOWER)
-#define LOWER_T TG(_LOWER)
 #define RAISE   MO(_RAISE)
-#define RAISE_T TG(_RAISE)
-#define ADJUST  MO(_ADJUST)
-#define ADJUSTT TG(_ADJUST)
+
+// togglable layers
+#define QWERTY  TG(_QWERTY)
+#define NUMPAD  TG(_NUMPAD)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Qwerty
@@ -87,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LCTL, KC_LGUI, KC_LALT, KC_NO,   KC_NO,   KC_SPC,  KC_SPC,  KC_NO,   KC_HOME, KC_PGDN, KC_PGUP, KC_END  \
 ),
 
-/* Adjust (Lower + Raise)
+/* Numpad (Lower + Raise)
  * ,-----------------------------------------|-----------------------------------------.
  * |      |      |      |   /  |   *  |   -  |      |      |      |      |      | DEL  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -100,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      | BSPC |   0  |   .  |      | ENT  |      |      |      |      |      |      |
  * `-----------------------------------------|-----------------------------------------'
  */
-[_ADJUST] =  LAYOUT_ortho_5x12( \
+[_NUMPAD] =  LAYOUT_ortho_5x12( \
   KC_NO,   KC_NO,   KC_NO,   KC_SLSH, KC_ASTR, KC_MINS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_DEL, \
   KC_TAB,  KC_NO,   KC_7,    KC_8,    KC_9,    KC_PLUS, KC_NO,   KC_LEFT, KC_UP,   KC_RGHT, KC_NO,   KC_BSPC,\
   KC_TAB,  KC_NO,   KC_4,    KC_5,    KC_6,    KC_PLUS, KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO,  \
@@ -128,27 +136,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,   KC_BSPC, KC_1,    KC_2,    KC_3,    KC_ENT,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT, \
   KC_NO,   KC_BSPC, KC_0,    KC_0,    KC_DOT,  KC_ENT,  KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
 )
-
 };
 
-
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
-}
-
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case QWERTY:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
-    case NUMPAD:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_NUMPAD);
-      }
-      return false;
-  }
-  return true;
+  return update_tri_layer_state(state, _LOWER, _RAISE, _NUMPAD);
 }
